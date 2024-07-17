@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Publishing Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Define keyframes for fade-in and slide-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Apply the fade-in animation to the content */
+        .fade {
+            animation: fadeIn 1s step-end
+        }
+        
+        /* Apply the slide-in animation to headers and articles */
+        header, main h2, #blog-posts article {
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        /* Theme variables for consistent styling */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #ffffff;
+            --content-background: #f1f1f1;
+            --content-shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(ground\,jpg.png);
+        
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+                animation: infinite
+            
+                
+            }
+    
+
+            {color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    .container{
+        width: 100%;
+     /* height: 500px; adjust height as needed */
+     background-image: url(ground\,jpg.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--content-background);
+            padding: 1em 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+            
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: left;
+        }
+        
+        nav ul li {
+            margin: 0 1em;
+            background-image: url(ground\,jpg.png);
+
+            
+        }
+        
+        nav ul li a {
+            color: var(--content-background);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        main {
+            padding: 2em;
+            transition: padding 0.3s ease;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-repeat:var(--text-color);
+            color: var(--content-background);
+            transition: background-color 0.3s ease;
+            background-color: rgb(13, 9, 29);
+        }
+        
+        #blog-posts article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--content-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--content-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #blog-posts article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--content-shadow);
+        }
+        
+        #blog-posts article h3 {
+            margin-top: 0;
+        }
+        
+        #blog-posts article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        #blog-posts article a:hover {
+            text-decoration: underline;
+        }
+        /* Mobile phones in portrait and landscape */
+     @media (max-width: 576px) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: column;
+             gap: 0.5rem;
+         }
+
+         section {
+             margin: 2rem 0;
+             padding: 2%;
+         }
+     }
+
+     /* Small devices (tablets) in portrait */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: row;
+             gap: 1rem;
+         }
+
+         section {
+             margin: 3rem 0;
+             padding: 3%;
+         }
+     }
+
+     /* Small devices (tablets) in landscape */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: landscape) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in portrait */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in landscape */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+         .col {
+             flex: 33.33%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in portrait */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in landscape */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+         .col {
+             flex: 25%;
+         }
+     }
+
+     /* Extra large devices in portrait and landscape */
+     @media (min-width: 1201px) {
+         .col {
+             flex: 25%;
+         }
+        </style>
+         <script>document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute("href");
+                    document.querySelector("#content").classList.remove("fade");
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                });
+            });
+        
+            window.addEventListener("load", () => {
+                document.querySelector("#content").classList.add("fade");
+                if (window.location.pathname.includes("blog.html")) {
+                    fetchBlogPosts();
+                }
+            });
+        });
+        
+        function fetchBlogPosts() {
+            const blogPostsContainer = document.getElementById("blog-posts");
+            const apiUrl = 'https://example.com/wp-json/wp/v2/posts'; // Replace with your WordPress site URL
+        
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(posts => {
+                    if (posts.length === 0) {
+                        blogPostsContainer.innerHTML = "<p>No blog posts found.</p>";
+                        return;
+                    }
+        
+                    posts.forEach(post => {
+                        const postElement = document.createElement("article");
+                        postElement.innerHTML = `
+                            <h3>${post.title.rendered}</h3>
+                            <p><small>by ${post.author_name} | ${new Date(post.date).toDateString()}</small></p>
+                            <div>${post.excerpt.rendered}</div>
+                            <a href="${post.link}" target="_blank">Read more</a>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching blog posts:", error);
+                    blogPostsContainer.innerHTML = "<p>Failed to load blog posts.</p>";
+                });
+        }
+        </script>
+</head>
+
+<body>
+    <header>
+        <h1>NORTHFAST LIMITED</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="Our services.html" class="nav-link">our services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="my account.html" class="nav-link">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content" class="fade">
+        <p>Welcome to <strong>Our Platform!</strong> Discover the power of web development and cutting-edge technology solutions at <em>[Your Platform Name]</em>. Whether you're a seasoned developer or just starting your journey, we're here to empower you with the tools and knowledge you need to succeed.</p>
+
+        <p><strong>What We Offer:</strong></p>
+    
+        
+        <ul>
+            <li><strong>WEB DEVELOPMENT RESOURCES:</strong> Access tutorials, articles, and guides on HTML, CSS, JavaScript, and more. Learn how to build responsive and visually stunning websites that captivate your audience.</li>
+            <img src="web3.jpg.png" width="400">
+            <li><strong>FRAMEWORK AND LIBRARIES:</strong> Dive into popular frameworks like React, Angular, and Vue.js. Master their intricacies and leverage their power to create dynamic web applications.</li>
+            <img src="frame.jpg.png" width="400">
+            <li><strong>BACKEND DEVELOPMENT:</strong> Explore server-side scripting languages such as Node.js, Python (Django), and PHP. Build robust APIs and scalable backend systems to support your applications.</li>
+            <img src="back.jpg.png" width="400">
+            <li><strong>DATABASE MANAGMENT:</strong> Learn SQL and NoSQL database technologies. Understand database design principles and optimize your data storage solutions.</li>
+            <img src="data.jpg.png" width="400">
+            <li><strong>CLOUD SERVICES:</strong> Harness the scalability and flexibility of cloud platforms like AWS, Google Cloud, and Azure. Deploy, manage, and scale your applications with ease.</li>
+            <img src="cloud.jpg.png" width="400">
+            <li><strong>TECH TRENDS AND INNOVATIONS:</strong> Stay updated with the latest trends in web development, including progressive web apps (PWAs), serverless architecture, microservices, and more.</li>
+            <img src="tech.jpg.png" width="400">
+        </ul>
+        
+        <p><strong>:JOIN OUR COMMUNITY</strong></p>
+        
+        <ul>
+            <li><strong>Interactive Learning:</strong> Engage in hands-on projects and coding challenges. Collaborate with peers, share insights, and grow together as developers.</li>
+            <li><strong>Support and Guidance:</strong> Our dedicated support team is here to assist you every step of the way. Whether you have questions about code syntax or need advice on project architecture, we're here to help.</li>
+            <li><strong>Career Development:</strong> Explore career paths in web development and tech. Gain insights into job trends, interview tips, and professional growth strategies.</li>
+        </ul>
+        
+        <p>Begin your journey into the exciting world of web development and tech innovation with <em>Northfast limited</em>. Whether you're building your first website or advancing your skills, we're here to inspire and guide you towards success.</p>
+        
+        <p><strong>Ready to embark on your coding adventure? Start exploring our resources and unlock your potential today!</strong></p>
+        
+    </main>
+   
+    <footer class="footer">
+        <p>Connect with us:</p>
+        <ul>
+            <li><a href="https://twitter.com/nothfastlimited">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/nothfast-limited">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/nothfastlimited">Facebook</a></li>
+        </ul>
+        <p>Contact us: info@nothfast.com | +253796789188</p>
+    </footer>>
+</body>
+</html>

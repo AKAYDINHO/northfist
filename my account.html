@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Define keyframes for fade-in and slide-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Apply the fade-in animation to the content */
+        .fade {
+            animation: fadeIn 1s step-end
+        }
+        
+        /* Apply the slide-in animation to headers and articles */
+        header, main h2, #blog-posts article {
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        /* Theme variables for consistent styling */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #ffffff;
+            --content-background: #f1f1f1;
+            --content-shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(ground\,jpg.png);
+        
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+                animation: infinite
+            
+                
+            }
+    
+
+            {color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    .container{
+        width: 100%;
+     /* height: 500px; adjust height as needed */
+     background-image: url(ground\,jpg.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--content-background);
+            padding: 1em 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+            
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: left;
+        }
+        
+        nav ul li {
+            margin: 0 1em;
+            background-image: url(ground\,jpg.png);
+
+            
+        }
+        
+        nav ul li a {
+            color: var(--content-background);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        label {
+            display: -webkit-inline-flex;
+            margin-bottom: 5px;
+            font-weight: normal;
+            
+        }
+        p {
+            margin: 5px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5pc;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        main {
+            padding: 2em;
+            transition: padding 0.3s ease;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-repeat:var(--text-color);
+            color: var(--content-background);
+            transition: background-color 0.3s ease;
+            background-color: rgb(13, 9, 29);
+        }
+        form {
+            display: flex;
+            flex-direction: column;width: 300;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            border-radius: 50px;
+            background-color: #012c2e;
+            size: 50px;
+            width: 400;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #5f2929;
+            border-radius: 4px;
+            width: 400;
+        }
+
+        input[type="submit"] {
+            background-color: #0a4c79;
+            color: rgb(27, 16, 170);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 450px;
+            margin-top: 20px;
+        }
+        
+        #blog-posts article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--content-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--content-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #blog-posts article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--content-shadow);
+        }
+        
+        #blog-posts article h3 {
+            margin-top: 0;
+        }
+        
+        #blog-posts article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        #blog-posts article a:hover {
+            text-decoration: underline;
+        }
+        /* Mobile phones in portrait and landscape */
+     @media (max-width: 576px) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: column;
+             gap: 0.5rem;
+         }
+
+         section {
+             margin: 2rem 0;
+             padding: 2%;
+         }
+     }
+
+     /* Small devices (tablets) in portrait */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: row;
+             gap: 1rem;
+         }
+
+         section {
+             margin: 3rem 0;
+             padding: 3%;
+         }
+     }
+
+     /* Small devices (tablets) in landscape */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: landscape) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in portrait */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in landscape */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+         .col {
+             flex: 33.33%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in portrait */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in landscape */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+         .col {
+             flex: 25%;
+         }
+     }
+
+     /* Extra large devices in portrait and landscape */
+     @media (min-width: 1201px) {
+         .col {
+             flex: 25%;
+         }
+        </style>
+         <script>document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute("href");
+                    document.querySelector("#content").classList.remove("fade");
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                });
+            });
+        
+            window.addEventListener("load", () => {
+                document.querySelector("#content").classList.add("fade");
+                if (window.location.pathname.includes("blog.html")) {
+                    fetchBlogPosts();
+                }
+            });
+        });
+        
+        function fetchBlogPosts() {
+            const blogPostsContainer = document.getElementById("blog-posts");
+            const apiUrl = 'https://example.com/wp-json/wp/v2/posts'; // Replace with your WordPress site URL
+        
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(posts => {
+                    if (posts.length === 0) {
+                        blogPostsContainer.innerHTML = "<p>No blog posts found.</p>";
+                        return;
+                    }
+        
+                    posts.forEach(post => {
+                        const postElement = document.createElement("article");
+                        postElement.innerHTML = `
+                            <h3>${post.title.rendered}</h3>
+                            <p><small>by ${post.author_name} | ${new Date(post.date).toDateString()}</small></p>
+                            <div>${post.excerpt.rendered}</div>
+                            <a href="${post.link}" target="_blank">Read more</a>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching blog posts:", error);
+                    blogPostsContainer.innerHTML = "<p>Failed to load blog posts.</p>";
+                });
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Create your account here</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="Our services.html" class="nav-link">our services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="my account.html" class="nav-link">My Account</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="content" class="fade">
+        <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label>Your Name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+              <label>Your Email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>password: <textarea name="password"></textarea></label>
+            </p>
+            <p>
+              <button style=font-size:30px>log in
+
+              </button>
+              <div>
+                <a href="https://support.google.com/accounts/answer/27441?hl=en" style="display: inline-block; font-size: 10px; padding: 10px 13px; background-color: #2600ff; color: #fff; text-decoration:none; border:0; cursor: pointer; border-radius: 111110px;">create account</a>
+            </div>
+            
+            
+    </div>
+</main>
+</body>
+</html>

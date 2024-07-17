@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Publishing Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Define keyframes for fade-in and slide-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Apply the fade-in animation to the content */
+        .fade {
+            animation: fadeIn 1s step-end
+        }
+        
+        /* Apply the slide-in animation to headers and articles */
+        header, main h2, #blog-posts article {
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        /* Theme variables for consistent styling */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #ffffff;
+            --content-background: #f1f1f1;
+            --content-shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(ground\,jpg.png);
+        
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+                animation: infinite
+            
+                
+            }
+    
+
+            {color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    .container{
+        width: 100%;
+     /* height: 500px; adjust height as needed */
+     background-image: url(ground\,jpg.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--content-background);
+            padding: 1em 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+            
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: left;
+        }
+        
+        nav ul li {
+            margin: 0 1em;
+            background-image: url(ground\,jpg.png);
+
+            
+        }
+        
+        nav ul li a {
+            color: var(--content-background);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        main {
+            padding: 2em;
+            transition: padding 0.3s ease;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-repeat:var(--text-color);
+            color: var(--content-background);
+            transition: background-color 0.3s ease;
+            background-color: rgb(13, 9, 29);
+        }
+        
+        #blog-posts article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--content-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--content-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #blog-posts article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--content-shadow);
+        }
+        
+        #blog-posts article h3 {
+            margin-top: 0;
+        }
+        
+        #blog-posts article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        #blog-posts article a:hover {
+            text-decoration: underline;
+        }
+          
+          #payment-gateway {
+            background-color: var(--primary-color);
+            color: var(--content-background);
+            padding: 2em;
+            text-align: right;
+            margin-bottom: 1em;
+            background-image: url(ground\,jpg.png);
+        }
+        
+        #payment-gateway h2 {
+            font-size: 2rem;
+        }
+        
+        #payment-gateway p {
+            font-size: 1.2rem;
+            margin-top: 1em;
+        }
+        
+        #payment-gateway ul {
+            list-style: inside;
+            padding: 0;
+            display: flex;
+            justify-content: right;
+            margin-top: 1em;
+        }
+        
+        #payment-gateway ul li {
+            margin: 0 10px;
+            background-color: var(--content-background);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+        }
+        
+        #payment-gateway ul li:hover {
+            background-color: var(--secondary-color);
+            color: var(--content-background);
+            transform: scale(1.1);
+            background-image: url(ground\,jpg.png);
+        }
+        /* Mobile phones in portrait and landscape */
+     @media (max-width: 576px) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: column;
+             gap: 0.5rem;
+         }
+
+         section {
+             margin: 2rem 0;
+             padding: 2%;
+         }
+     }
+
+     /* Small devices (tablets) in portrait */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: row;
+             gap: 1rem;
+         }
+
+         section {
+             margin: 3rem 0;
+             padding: 3%;
+         }
+     }
+
+     /* Small devices (tablets) in landscape */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: landscape) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in portrait */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in landscape */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+         .col {
+             flex: 33.33%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in portrait */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in landscape */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+         .col {
+             flex: 25%;
+         }
+     }
+
+     /* Extra large devices in portrait and landscape */
+     @media (min-width: 1201px) {
+         .col {
+             flex: 25%;
+         }
+        </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute("href");
+                    document.querySelector("#content").classList.remove("fade");
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                });
+            });
+
+            window.addEventListener("load", () => {
+                document.querySelector("#content").classList.add("fade");
+                if (window.location.pathname.includes("blog.html")) {
+                    fetchBlogPosts();
+                }
+            });
+        });
+
+        function fetchBlogPosts() {
+            const blogPostsContainer = document.getElementById("blog-posts");
+            const apiUrl = 'https://example.com/wp-json/wp/v2/posts'; // Replace with your WordPress site URL
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(posts => {
+                    if (posts.length === 0) {
+                        blogPostsContainer.innerHTML = "<p>No blog posts found.</p>";
+                        return;
+                    }
+
+                    posts.forEach(post => {
+                        const postElement = document.createElement("article");
+                        postElement.innerHTML = `
+                            <h3>${post.title.rendered}</h3>
+                            <p><small>by ${post.author_name} | ${new Date(post.date).toDateString()}</small></p>
+                            <div>${post.excerpt.rendered}</div>
+                            <a href="${post.link}" target="_blank">Read more</a>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching blog posts:", error);
+                    blogPostsContainer.innerHTML = "<p>Failed to load blog posts.</p>";
+                });
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>What we offer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="Our services.html" class="nav-link">our services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="my account.html" class="nav-link">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        
+        
+    <main id="content" class="fade">
+        
+        <section id="services">
+            <h2>Web Development Services</h2>
+            <p>Discover our range of professional web development services tailored to meet your needs:</p>
+            <ul>
+                <li>
+                    <h3>Custom Website Design</h3>
+                    <p>Unique and responsive designs crafted to elevate your online presence.</p>
+                    <img src="cus.jpg.png" width="400">
+                </li>
+                <li>
+                    <h3>Frontend Development</h3>
+                    <p>Expertise in HTML, CSS, and JavaScript to create interactive user interfaces.</p>
+                    <img src="shot.jpg.png" width="400">
+                </li>
+                <li>
+                    <h3>Backend Development</h3>
+                    <p>Robust server-side solutions using technologies like Node.js, PHP, and Python.</p>
+                    <img src="shot2.jpg.png" width="400">
+                </li>
+                <li>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Build secure and scalable e-commerce platforms tailored to your business.</p>
+                    <img src="sot.jpg.png" width="400">
+                </li>
+                <li>
+                    <h3>SEO Optimization</h3>
+                    <p>Enhance your website's visibility and attract more organic traffic.</p>
+                    <img src="shot3.jpg.png" width="400">
+                </li>
+            </ul>
+        </section>
+        <section id="payment-gateway">
+            <h2>Secure Payment Gateway</h2>
+            <img src="creen.jpg.png" width="400">
+            <p>We offer a secure payment gateway for seamless transactions:</p>
+            <ul>
+            <li><a href="https://www.paypal.com/ke/signin">Installments </a></li>
+                <li> <a href="https://www.paypal.com/ke/signin">One-time Payment </a></li>
+                <li> <a href="https://www.paypal.com/ke/signin">Custom Plans Available </a></a></li>
+            </ul>
+        </section>
+        
+    </main>
+    
+    <footer class="footer">
+        <p>Connect with us:</p>
+        <ul>
+            <li><a href="https://twitter.com/nothfastlimited">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/nothfast-limited">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/nothfastlimited">Facebook</a></li>
+        </ul>
+        <p>Contact us: info@nothfast.com | +253796789188</p>
+    </footer>
+</body>
+</html>

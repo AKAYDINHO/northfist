@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Define keyframes for fade-in and slide-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Apply the fade-in animation to the content */
+        .fade {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        /* Apply the slide-in animation to headers and articles */
+        header, main h2, #blog-posts article {
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        /* Theme variables for consistent styling */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #ffffff;
+            --content-background: #ffffff;
+            --content-shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(ground\,jpg.png);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: infinite;
+            blur(background-image:;)
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--content-background);
+            background-image: url(ground\,jpg.png);
+            padding: 1em 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            background-image: url(ground\,jpg.png);
+            justify-content: left;
+        }
+        
+        nav ul li {
+            margin: 0 1em;
+            background-image: url(ground\,jpg.png);
+            
+        }
+        
+        nav ul li a {
+            color: var(--content-background);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background-image: url(ground\,jpg.png);
+            
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        main {
+            padding: 2em;
+            transition: padding 0.3s ease;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color:rgb(30, 18, 59)
+            color: var(--content-background);
+            transition: background-color 0.3s ease;
+        }
+          /* Basic styling for the photo gallery */
+        .photo-gallery {
+            display:-webkit-inline-box;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid columns */
+            gap: 10px; /* Gap between each photo item */
+            margin-top: 10px; /* Margin at the top */
+        }
+
+        .photo-item {
+            text-align: left;
+            position: relative; /* Relative positioning for absolute children */
+        }
+
+        .photo-item img {
+            width: 150px; /* Fixed width for the images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for aesthetics */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for each image */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        /* Additional info container */
+        .info-container {
+            display: none; /* Initially hidden */
+            /* position: sticky; below the image */
+            bottom: 10pc;
+            left: 20%;
+            width: 20%;
+            padding: 10px;
+            background-color: rgba(22, 17, 17, 0.9); /* Semi-transparent background */
+            border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Shadow at the bottom */
+            text-align: center; /* Align text to the left */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+
+        .info-container p {
+            margin: 0;
+        }
+
+        /* Hover effect to show info container */
+        .photo-item:hover .info-container {
+            display: block; /* Show info container on hover */
+            . /* Additional CSS specific for the video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            overflow: hidden;
+            margin-top: 20px; /* Adjust spacing */
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #blog-posts article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--content-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--content-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #blog-posts article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--content-shadow);
+        }
+        
+        #blog-posts article h3 {
+            margin-top: 0;
+        }
+        
+        #blog-posts article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        #blog-posts article a:hover {
+            text-decoration: underline;
+        }
+        /* Mobile phones in portrait and landscape */
+     @media (max-width: 576px) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: column;
+             gap: 0.5rem;
+         }
+
+         section {
+             margin: 2rem 0;
+             padding: 2%;
+         }
+     }
+
+     /* Small devices (tablets) in portrait */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
+         .col {
+             flex: 100%;
+         }
+
+         nav ul {
+             flex-direction: row;
+             gap: 1rem;
+         }
+
+         section {
+             margin: 3rem 0;
+             padding: 3%;
+         }
+     }
+
+     /* Small devices (tablets) in landscape */
+     @media (min-width: 577px) and (max-width: 768px) and (orientation: landscape) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in portrait */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Medium devices (small laptops/desktops) in landscape */
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+         .col {
+             flex: 33.33%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in portrait */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: portrait) {
+         .col {
+             flex: 50%;
+         }
+     }
+
+     /* Large devices (large laptops/desktops) in landscape */
+     @media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+         .col {
+             flex: 25%;
+         }
+     }
+
+     /* Extra large devices in portrait and landscape */
+     @media (min-width: 1201px) {
+         .col {
+             flex: 25%;
+         }
+        </style>
+         <script>document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute("href");
+                    document.querySelector("#content").classList.remove("fade");
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                });
+            });
+        
+            window.addEventListener("load", () => {
+                document.querySelector("#content").classList.add("fade");
+                if (window.location.pathname.includes("blog.html")) {
+                    fetchBlogPosts();
+                }
+            });
+        });
+        
+        function fetchBlogPosts() {
+            const blogPostsContainer = document.getElementById("blog-posts");
+            const apiUrl = 'https://example.com/wp-json/wp/v2/posts'; // Replace with your WordPress site URL
+        
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(posts => {
+                    if (posts.length === 0) {
+                        blogPostsContainer.innerHTML = "<p>No blog posts found.</p>";
+                        return;
+                    }
+        
+                    posts.forEach(post => {
+                        const postElement = document.createElement("article");
+                        postElement.innerHTML = `
+                            <h3>${post.title.rendered}</h3>
+                            <p><small>by ${post.author_name} | ${new Date(post.date).toDateString()}</small></p>
+                            <div>${post.excerpt.rendered}</div>
+                            <a href="${post.link}" target="_blank">Read more</a>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching blog posts:", error);
+                    blogPostsContainer.innerHTML = "<p>Failed to load blog posts.</p>";
+                });
+                
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('myVideo');
+            
+            // Check if fullscreen API is supported
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { /* Firefox */
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE/Edge */
+                video.msRequestFullscreen();
+            }
+        });
+
+        }
+        </script>
+     <body>
+
+        <!-- Header section -->
+        <header>
+            <h1>OUR TEAM</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="Our services.html" class="nav-link">our services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="my account.html" class="nav-link">My Account</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <!-- Main content section -->
+        <main id="content" class="fade">
+            <h2>ABOUT US</h2>
+            <p>Welcome to <strong>NORTHFAST LIMITED</strong>! We are thrilled to welcome you to our digital home, where creativity, innovation, and technology converge to create exceptional web experiences. As a passionate team of web developers and designers, we are dedicated to transforming your ideas into engaging digital realities.</p>
+    
+            <p>At Northfast limited, we understand the significance of a strong online presence in today's digital landscape. Whether you're a small business striving to establish your brand or a large corporation aiming to innovate, we are here to empower your journey with our expertise and commitment.</p>
+    
+            <p>Our journey began with a simple yet profound belief: that every business deserves a website that not only showcases their offerings but also captivates and converts visitors into loyal customers. With this ethos at our core, we have honed our skills in crafting visually appealing, user-friendly websites that prioritize functionality and aesthetics.</p>
+    
+            <p>Explore our portfolio, and you'll discover a diverse range of projects that reflect our versatility and creativity. From responsive websites that adapt seamlessly across devices to robust web applications that streamline business operations, each project is a testament to our dedication to excellence.</p>
+    
+            <p>Collaboration is key to our approach. We believe in working closely with our clients, understanding their unique goals and challenges, and tailoring solutions that meet their specific needs. Whether you're looking to redesign your current website, launch an e-commerce platform, or explore custom web development solutions, we are ready to partner with you every step of the way.</p>
+    
+            <p>Our commitment extends beyond the initial project delivery. We believe in building long-term relationships with our clients, offering ongoing support and maintenance to ensure your digital presence remains vibrant and effective.</p>
+    
+            <p>Thank you for visiting 5 Brothers Web. We invite you to explore our services, meet our team, and envision the possibilities. Together, let's embark on a journey to elevate your online presence and achieve remarkable success.<
+            <div id="team-section">
+                <h3>Our Team</h3>
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="aqay.jpg.jpeg " width="300">
+                        <div class="info-container">
+                            <p>NAME: Abdikhaliq Abdiker /<p>ceo</p></p>
+                        </div>
+                        <div class="photo-gallery">
+                            <div class="photo-item">
+                                <img src="moha.jpg.jpeg" width="300">
+                                <div class="info-container">
+                                    <p>NAME:mohamed /<p>secretary</p></p>
+                                </div>
+                                <div class="photo-gallery">
+                                    <div class="photo-item">
+                                        <img src="abdi.jpg.jpeg" width="300">
+                                        <div class="info-container">
+                                            <p>NAME:Abdifatah /<p>vice CEO</p></p>
+                                        </div>
+                    </div>
+                    <div class="photo-item">                                                                                                     
+                         <img src="abu.jpg.jpeg" width="300"> *
+                        <div class="info-container">
+                            <p>Name:Abubakar omar. /<p>treasurer</p></p>
+                        </div>
+                        
+                <!-- Placeholder for team members or additional content -->
+            </div>
+            
+        </main>
+        
+    <!-- Video section with adjusted CSS -->
+    <section class="video-container">
+        <video src="north.mp4.mp4" controls autoplay loop muted style="width: 1600px; height: 600px; object-fit: cover;"></video>
+    </section>
+
+        
+        
+
+    
+        <!-- Footer section -->
+        
+        <footer class="footer">
+            <p>Connect with us:</p>
+            <ul>
+                <li><a href="https://twitter.com/nothfastlimited">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/company/nothfast-limited">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/nothfastlimited">Facebook</a></li>
+            </ul>
+            <p>Contact us: info@nothfast.com | +253796789188</p>
+        </footer>
+    </body>
+    </html>
